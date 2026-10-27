@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deadliner — Главная</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home">
+<div class="wrap">
+  <header class="header">
+    <a class="logo" href="home.html">Dead<span>liner</span></a>
+    <nav class="nav">
+      <a href="home.html" aria-current="page">Главная</a>
+      <a href="home.html#tasks">Задания</a>
+      <a href="settings.html">Настройки</a>
+      <a class="avatar" href="settings.html" data-initial aria-label="Профиль">D</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Привет, <span data-name>Даниил</span>!</h1>
+    <p class="lead">вот что тебе предстоит сделать.</p>
+
+    <section class="stats" aria-label="Сводка">
+      <div class="stat"><span>На сегодня</span><b id="s-today">3</b><span id="l-today">Задания</span></div>
+      <div class="stat accent"><span>Скоро дедлайн</span><b id="s-soon">2</b><span id="l-soon">задания</span></div>
+      <div class="stat"><span>Выполнено</span><b id="s-done">10</b><span id="l-done">Заданий</span></div>
+    </section>
+
+    <div class="row-head" id="tasks"><h2>Ближайшие дедлайны</h2><a href="#tasks">Все задания →</a></div>
+    <ul class="tasks" id="task-list"></ul>
+
+    <div class="progress-head"><span>Прогресс обучения</span><span id="p-count">12 из 20</span></div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="bar"><i id="bar-fill"></i></div>
+    <p class="progress-note" id="p-note">Выполнено 60% заданий</p>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

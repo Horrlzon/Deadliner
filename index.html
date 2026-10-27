@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deadliner — Вход</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="auth">
+  <div class="logo">Dead<span>liner</span></div>
+  <form class="auth-form" id="login" novalidate>
+    <h1>Вход в аккаунт</h1>
+    <label class="field"><span>Email</span>
+      <input class="input" id="email" type="email" placeholder="Введите email" autocomplete="email"></label>
+    <label class="field"><span>Пароль</span>
+      <input class="input" id="password" type="password" placeholder="Введите пароль" autocomplete="current-password"></label>
+    <button class="btn" type="submit">Войти</button>
+    <p class="error" id="error" role="alert"></p>
+  </form>
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>

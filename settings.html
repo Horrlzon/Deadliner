@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deadliner — Настройки</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="settings">
+<div class="wrap">
+  <header class="header">
+    <a class="logo" href="home.html">Dead<span>liner</span></a>
+    <nav class="nav">
+      <a href="home.html">Главная</a>
+      <a href="home.html#tasks">Задания</a>
+      <a href="settings.html" aria-current="page">Настройки</a>
+      <a class="avatar" href="settings.html" data-initial aria-label="Профиль">D</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <h1>Настройки</h1>
+      <p class="hint">управляй свои профилем и настройками сервиса.</p>
+      <p class="profile-label">Профиль</p>
+      <div class="profile">
+        <div class="avatar big" data-initial>D</div>
+        <div class="meta">
+          <p id="p-name" data-name>Даниил</p>
+          <input class="input" id="name-input" hidden maxlength="30" aria-label="Имя">
+          <p id="p-email">student@example.com</p>
+        </div>
+        <button class="btn-sm" id="edit-btn" type="button">Изменить</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Настройки</h2>
+      <div class="setting">
+        <div><b>Напоминать о дедлайнах</b><small>За 24 часа до сдачи задания</small></div>
+        <button class="switch" id="remind" type="button" role="switch" aria-checked="true" aria-label="Напоминать о дедлайнах"></button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Внешний вид</h2>
+      <div class="setting">
+        <div><p class="setting-line">Цветовая тема</p><p class="setting-line" id="theme-desc">Тёмный интерфейс</p></div>
+        <button class="outline-btn" id="theme-btn" type="button">Тёмная</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Аккаунт</h2>
+      <button class="link-btn" id="pw-toggle" type="button">Изменить пароль</button>
+      <form class="pw-form" id="pw-form" novalidate>
+        <input class="input" id="pw1" type="password" placeholder="Новый пароль" autocomplete="new-password" aria-label="Новый пароль">
+        <input class="input" id="pw2" type="password" placeholder="Повторите пароль" autocomplete="new-password" aria-label="Повторите пароль">
+        <button class="btn" type="submit">Сохранить</button>
+      </form>
+    </section>
+
+    <a class="logout" href="index.html">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 2H2.5v12H6M7 8h7M11.5 5.5 14 8l-2.5 2.5"/></svg>
+      Выйти из аккаунта
+    </a>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
