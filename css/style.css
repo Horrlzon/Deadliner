@@ -30,6 +30,12 @@ button{cursor:pointer;border:0;background:none}
 .auth-form .btn{margin-top:24px}
 .error{min-height:18px;margin-top:12px;font-size:13px;color:var(--violet);font-weight:600}
 
+a.btn{display:grid;place-items:center}
+.btn.ghost{background:transparent;border:1px solid var(--fg);color:var(--fg)}
+.auth-form .btn.ghost{margin-top:12px}
+.auth.compact{padding-top:8vh}
+.auth.compact .auth-form{margin-top:clamp(40px,8vh,72px)}
+
 /* ---------- Шапка приложения ---------- */
 .wrap{max-width:1100px;margin:0 auto;padding:0 28px 56px}
 .header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:28px 0 28px;border-bottom:1px solid var(--line)}
@@ -55,17 +61,37 @@ button{cursor:pointer;border:0;background:none}
 .row-head a{color:var(--violet);font-weight:500}
 .tasks{list-style:none;background:var(--fg);color:var(--bg);border-radius:var(--radius);margin-top:30px;overflow:hidden}
 .tasks li+li{border-top:1px solid var(--bg)}
-.task{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;padding:14px 14px;min-height:57px;color:inherit}
+.tasks li.item{display:flex;align-items:center}
+.del{flex:none;width:44px;align-self:stretch;font-size:20px;line-height:1;color:var(--bg);opacity:.55}
+.del:hover{opacity:1;color:var(--violet)}
+.row-actions{display:flex;align-items:center;gap:18px}
+.row-actions .btn-sm{height:34px;padding:0 14px;font-size:13px}
+.modal{border:0;border-radius:var(--radius);padding:0;margin:auto;width:min(420px,calc(100% - 32px));background:var(--fg);color:var(--bg)}
+.modal::backdrop{background:rgba(13,13,15,.72)}
+.modal-body{padding:24px}
+.modal h2{font-size:20px;font-weight:700;margin-bottom:18px}
+.modal .input{background:transparent;color:var(--bg);border:2px solid color-mix(in srgb,var(--bg) 40%,transparent);color-scheme:light}
+[data-theme="light"] .modal .input{color-scheme:dark}
+.modal .input::placeholder{color:var(--bg);opacity:.5}
+.modal .input.invalid{border-color:var(--violet)}
+.modal-actions{display:flex;gap:12px;margin-top:22px}
+.modal-actions .btn.ghost{border-color:var(--bg);color:var(--bg)}
+
+.task{flex:1;min-width:0;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;padding:14px 14px;min-height:57px;color:inherit}
 .task strong{display:block;font-weight:400;font-size:14px}
 .task small{display:block;font-size:11px;margin-top:4px;opacity:.7}
 .badge{flex:none;font-size:12px;font-weight:700;padding:6px 14px;border-radius:var(--radius);background:var(--violet);color:var(--white)}
 .badge.soft{background:transparent;color:var(--violet);border:1px solid var(--violet)}
+.tasks .empty{padding:18px 14px;font-size:14px;opacity:.7}
 .task.done strong{text-decoration:line-through;opacity:.55}
 .task.done .badge{display:none}
 .progress-head{display:flex;justify-content:space-between;margin-top:30px;font-size:14px;font-weight:700}
 .bar{height:20px;border-radius:10px;margin-top:16px;background:color-mix(in srgb,var(--fg) 80%,transparent);overflow:hidden}
 .bar i{display:block;height:100%;width:0;border-radius:10px;background:var(--violet);transition:width .4s ease}
 .progress-note{margin-top:20px;font-size:14px}
+
+.tasks-page .row-head{margin-top:40px}
+.tasks-page .row-head .btn-sm{height:34px;padding:0 14px}
 
 /* ---------- Настройки ---------- */
 .section{padding:28px 0 18px;border-bottom:1px solid var(--line)}
@@ -98,6 +124,7 @@ button{cursor:pointer;border:0;background:none}
 
 /* ---------- Телефон ---------- */
 @media(max-width:720px){
+  .row-head{flex-wrap:wrap;gap:12px}
   .wrap{padding:0 18px 40px}
   .header{padding:20px 0;flex-wrap:wrap}
   .nav{gap:14px}.nav a{font-size:14px}
@@ -109,4 +136,7 @@ button{cursor:pointer;border:0;background:none}
   .profile{flex-wrap:wrap}
 }
 @media(max-width:400px){.nav a:nth-child(2){display:none}}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-old(root){z-index:1}
+::view-transition-new(root){z-index:2}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}

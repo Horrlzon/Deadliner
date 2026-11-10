@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deadliner — Регистрация</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="auth compact">
+  <div class="logo">Dead<span>liner</span></div>
+  <form class="auth-form" id="register" novalidate>
+    <h1>Создать аккаунт</h1>
+    <label class="field"><span>Имя</span>
+      <input class="input" id="r-name" type="text" placeholder="Введите имя" maxlength="30" autocomplete="given-name"></label>
+    <label class="field"><span>Email</span>
+      <input class="input" id="r-email" type="email" placeholder="Введите email" autocomplete="email"></label>
+    <label class="field"><span>Пароль</span>
+      <input class="input" id="r-pw" type="password" placeholder="Придумайте пароль" autocomplete="new-password"></label>
+    <label class="field"><span>Повторите пароль</span>
+      <input class="input" id="r-pw2" type="password" placeholder="Повторите пароль" autocomplete="new-password"></label>
+    <button class="btn" type="submit">Создать аккаунт</button>
+    <a class="btn ghost" href="index.html">Войти</a>
+    <p class="error" id="r-error" role="alert"></p>
+  </form>
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deadliner — Задания</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home tasks-page">
+<div class="wrap">
+  <header class="header">
+    <a class="logo" href="home.html">Dead<span>liner</span></a>
+    <nav class="nav">
+      <a href="home.html">Главная</a>
+      <a href="tasks.html" aria-current="page">Задания</a>
+      <a href="settings.html">Настройки</a>
+      <a class="avatar" href="settings.html" data-initial aria-label="Профиль">D</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Задания</h1>
+    <p class="lead">все твои задания и сроки сдачи.</p>
+
+    <div class="row-head">
+      <h2>Все задания</h2>
+      <button class="btn-sm" id="add-btn" type="button">Добавить задание</button>
+    </div>
+    <ul class="tasks" id="task-list"></ul>
+  </main>
+</div>
+<dialog class="modal" id="task-dialog" aria-labelledby="dlg-title">
+  <form class="modal-body" id="task-form" novalidate>
+    <h2 id="dlg-title">Новое задание</h2>
+    <label class="field"><span>Название задания</span>
+      <input class="input" id="t-title" type="text" maxlength="60" placeholder="Например, Практическая работа № 4"></label>
+    <label class="field"><span>Название предмета</span>
+      <input class="input" id="t-subject" type="text" maxlength="40" placeholder="Например, Frontend"></label>
+    <label class="field"><span>Срок выполнения</span>
+      <input class="input" id="t-due" type="date"></label>
+    <div class="modal-actions">
+      <button class="btn" type="submit">Сохранить</button>
+      <button class="btn ghost" id="t-cancel" type="button">Отмена</button>
+    </div>
+    <p class="error" id="t-error" role="alert"></p>
+  </form>
+</dialog>
+<div class="toast" id="toast"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
